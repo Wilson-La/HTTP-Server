@@ -20,7 +20,7 @@ import java.lang.String;
 
 public class httpfs implements Runnable{
 	private static boolean isVerbose = false;
-	private static String port = "80";
+	private static String port = "8080";
 	private static String directory = "";
 	private Socket connect;
 	
@@ -480,7 +480,12 @@ public class httpfs implements Runnable{
     }
 	
 	public static void help() {
-		
+		System.out.println("httpfs is a simple file server.\n"
+				+ "usage: httpfs [-v] [-p PORT] [-d PATH-TO-DIR]\n"
+				+ "-v Prints debugging messages.\n"
+				+ "-p Specifies the port number that the server will listen and serve at.\n"
+				+ "Default is 8080.\n"
+				+ "-d Specifies the directory that the server will use to read/write requested files. Default is the current directory when launching the application.");
 	}
 	
 	public static void main(String[] args) {
